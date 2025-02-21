@@ -15,7 +15,7 @@ public class Main {
     ));
 
     public static void main(String[] args) {
-        System.out.println("Højeste til er: " + Maximum.maximum(integers));
+        System.out.println("Højeste tal er: " + Maximum.maximum(integers));
         QuickSort.sort(integers);
         System.out.println(integers);
 //        ArrayList<Integer> generatedList = generateListWithRandomNumber(1_000_000);
