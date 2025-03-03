@@ -34,9 +34,18 @@ public class Gui extends Application {
     }
 
     private void drawTriangle(Point2D pointA, Point2D pointB, Point2D pointC, int count) {
-        drawLine(pointA, pointB);
-        drawLine(pointA, pointC);
-        drawLine(pointB, pointC);
+        if (count > 5) {
+            drawLine(pointA, pointB);
+            drawLine(pointA, pointC);
+            drawLine(pointB, pointC);
+        } else {
+            Point2D halfA = pointA.midpoint(pointB);
+            Point2D halfB = pointB.midpoint(pointC);
+            Point2D halfC = pointC.midpoint(pointA);
+            drawTriangle(pointA, halfA, halfC, count + 1);
+            drawTriangle(halfA, pointB, halfB, count + 1);
+            drawTriangle(halfC, halfB, pointC, count + 1);
+        }
     }
 
     private void drawLine(Point2D pointA, Point2D pointB) {
