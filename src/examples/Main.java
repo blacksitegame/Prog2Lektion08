@@ -18,11 +18,11 @@ public class Main {
         System.out.println("Højeste tal er: " + Maximum.maximum(integers));
         QuickSort.sort(integers);
         System.out.println(integers);
-//        ArrayList<Integer> generatedList = generateListWithRandomNumber(1_000_000);
-//        Instant start = Instant.now();
-//        QuickSort.sort(generatedList);
-//        Instant finish = Instant.now();
-//        System.out.println("Sorteringen tog " + Duration.between(start, finish).toMillis() + " ms.");
+        ArrayList<Integer> generatedList = generateListWithRandomNumber(1_000_000);
+        Instant start = Instant.now();
+        QuickSort.sort(generatedList);
+        Instant finish = Instant.now();
+        System.out.println("Sorteringen tog " + Duration.between(start, finish).toMillis() + " ms.");
     }
 
     public static ArrayList<Integer> generateListWithRandomNumber(int size) {

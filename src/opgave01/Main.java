@@ -15,7 +15,15 @@ public class Main {
     }
 
     private static int sum(ArrayList<Integer> integers, int left, int right) {
-        //TODO
-        return 0;
+        if (left >= right) {
+            return integers.get(left);
+        } else {
+            int mid = (left + right) / 2;
+            int result = 0;
+            result += sum(integers, left, mid);
+            result += sum(integers, mid + 1, right);
+            return result;
+        }
+
     }
 }
